@@ -7,7 +7,7 @@
         class="alert alert-info text-center"
         :class="{ 'animated tada': noticing }"
       >
-        抽中了 <strong class="display-2 text-warning">{{ serial }}</strong> 號
+        抽中了 <strong class="display-2 text-warning">{{ employee }}</strong>
         <button
           class="close"
           @click="serial = null"
@@ -73,7 +73,8 @@ export default {
   data: () => ({
     serial: null,
     drawing: false,
-    noticing: false
+    noticing: false,
+    employee:null
   }),
 
   computed: {
@@ -123,12 +124,14 @@ export default {
       }
     },
     randomWinner () {
+      console.log(employees);
       const gift = this.$store.getters['gifts/selected']
       const random = Math.floor(Math.random() * this.pool.length)
       const serial = this.pool[random]
-      const winner = new Winner(serial, gift.id)
+      const winner = new Winner(serial, gift.id,null,null,window.employees[serial])
       this.$store.commit('winners/add', { winner })
       this.serial = winner.serial
+      this.employee = winner.employee
     }
   }
 }

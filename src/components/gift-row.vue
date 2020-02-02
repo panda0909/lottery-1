@@ -51,7 +51,7 @@
         :class="{ appeared: winner.appearedAt }"
         @click.stop="$store.commit('winners/appear', { serial: winner.serial })"
       >
-        {{ winner.serial }} 號
+        {{ winner.employee }} 
         <i
           v-show="editMode"
           class="fas fa-times"
