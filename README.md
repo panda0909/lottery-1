@@ -8,7 +8,7 @@ Github page: [http://jk195417.github.io/lottery][4a122d84]
 
 ```bash
 # Download
-$ git clone https://github.com/jk195417/lottery.git
+$ git clone https://github.com/panda0909/lottery.git
 
 # Build dependencies and run
 $ cd lottery
